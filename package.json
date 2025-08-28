@@ -4,10 +4,9 @@
   "description": "todo-list proyecto",
   "main": "index.js",
   "scripts": {
-  "start": "node index.js",
-  "test": "echo \"Error: no test specified\" && exit 1"
-}
-,
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sofiagarcia358/backEnd-Todolist.git"
@@ -19,7 +18,9 @@
   },
   "homepage": "https://github.com/sofiagarcia358/backEnd-Todolist#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^17.2.1",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "mysql2": "^3.14.3"
   }
 }

@@ -1,19 +1,25 @@
-// index.js
 
 require('dotenv').config();
 const express = require('express');
 const app = express();
+
+//cors
+const cors = require('cors');
+app.use(cors({
+  origin: ['http://localhost:5500', 'http://127.0.0.1:5500'],
+  methods: ['GET','POST','OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+
+const getTablas = require('./routers/get/obtenerTablas');
+app.use(getTablas);
+
+const getTareas = require('./routers/get/obtenerTareas');
+app.use(getTareas);
+
+
 const PORT = process.env.PORT || 3000;
-
-// Middleware para JSON
-app.use(express.json());
-
-// Ruta base de prueba
-app.get('/', (req, res) => {
-  res.send('📝 Servidor ToDo List activo');
-});
-
-// Iniciar servidor
 app.listen(PORT, () => {
-  console.log(`✅ Servidor escuchando en http://localhost:${PORT}`);
+  console.log(`Servidor escuchando en http://localhost:${PORT}`);
 });
