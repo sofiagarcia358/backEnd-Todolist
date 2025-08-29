@@ -6,7 +6,7 @@ const app = express();
 //cors
 const cors = require('cors');
 app.use(cors({
-  origin: ['http://localhost:5500', 'http://127.0.0.1:5500'],
+  origin: ['http://localhost:5500', 'http://127.0.0.1:5500', 'https://todo-list-ou7j.onrender.com'],
   methods: ['GET','POST','OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
